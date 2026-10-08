@@ -1,0 +1,2 @@
+CREATE TABLE repair_queue (id TEXT PRIMARY KEY, user_id TEXT NOT NULL, card_id TEXT NOT NULL REFERENCES cards(id), created_at INTEGER NOT NULL, updated_at INTEGER NOT NULL, message_id INTEGER, revealed INTEGER NOT NULL DEFAULT 0 CHECK(revealed IN (0,1)), resolved_at INTEGER, resolved_update_id INTEGER, UNIQUE(user_id,card_id));
+CREATE INDEX repair_queue_pending ON repair_queue(user_id,resolved_at,created_at);

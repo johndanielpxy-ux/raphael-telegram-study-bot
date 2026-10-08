@@ -1,0 +1,12 @@
+node_modules/
+.wrangler/
+.dev.vars
+.dev.vars.*
+.env
+.env.*
+exports/
+backups/
+*.generated.sql
+*.log
+.DS_Store
+.gstack/
